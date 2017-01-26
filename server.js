@@ -18,17 +18,8 @@ app.use((req,res,next)=>{
     }
 
   });
-res.render('home.hbs',{
 
-  welcomeMessage: 'welcome to home page',
-  name: 'Yiwei',
-  likes:[
-    'Swimming',
-    'Jogging'
-],
-currentYear: new Date().getFullYear()
-});
-  //next();
+  next();
 });
 
 app.get('/',(req,res)=>{
@@ -50,7 +41,13 @@ app.get('/about',(req,res)=>{
     currentYear: new Date().getFullYear()
 
   });
+});
+app.get('/projects',(req,res)=>{
+  res.render('projects.hbs',{
+    pageTitle:'Projects'
+  });
 })
+
 app.get('/bad',(req,res)=>{
   res.send({
     errorMessage: 'Unable to handle request'
