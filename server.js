@@ -56,7 +56,7 @@ app.get('/bad',(req,res)=>{
     errorMessage: 'Unable to handle request'
   });
 });
-app.listen(3000,()=>{
+app.listen(port,()=>{
 
   console.log('server is up on port 3000');
 });
